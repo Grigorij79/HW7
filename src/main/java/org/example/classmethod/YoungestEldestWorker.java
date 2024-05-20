@@ -1,4 +1,4 @@
-package org.example.example.classmethod;
+package org.example.classmethod;
 
 import java.time.LocalDate;
 

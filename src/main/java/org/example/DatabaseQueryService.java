@@ -1,13 +1,10 @@
-package org.example.example;
+package org.example;
 
 import org.example.classmethod.*;
 
 import java.io.FileReader;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,11 +21,11 @@ public class DatabaseQueryService {
         String sql = getSqlFromFile(SQL_FIND_MAX_PROJECTS_COUNT_CLIENT);
 
         Connection connection = Database.getInstance().getConnection();
-        Statement statement = null;
+        PreparedStatement statement = null;
         ResultSet resultSet = null;
 
         try {
-            statement = connection.createStatement();
+            statement = connection.prepareStatement(sql);
             resultSet = statement.executeQuery(sql);
 
             while (resultSet.next()){
@@ -76,11 +73,11 @@ public class DatabaseQueryService {
         String sql = getSqlFromFile(SQL_FIND_LONGEST_PROJECT);
 
         Connection connection = Database.getInstance().getConnection();
-        Statement statement = null;
+        PreparedStatement statement = null;
         ResultSet resultSet = null;
 
         try {
-            statement = connection.createStatement();
+            statement = connection.prepareStatement(sql);
             resultSet = statement.executeQuery(sql);
 
             while (resultSet.next()){
@@ -105,11 +102,11 @@ public class DatabaseQueryService {
         String sql = getSqlFromFile(SQL_FIND_MAX_SALARY_WORKER);
 
         Connection connection = Database.getInstance().getConnection();
-        Statement statement = null;
+        PreparedStatement statement = null;
         ResultSet resultSet = null;
 
         try {
-            statement = connection.createStatement();
+            statement = connection.prepareStatement(sql);
             resultSet = statement.executeQuery(sql);
 
             while (resultSet.next()){
@@ -133,11 +130,11 @@ public class DatabaseQueryService {
         String sql = getSqlFromFile(SQL_FIND_YOUNGEST_ELDEST_WORKERS);
 
         Connection connection = Database.getInstance().getConnection();
-        Statement statement = null;
+        PreparedStatement statement = null;
         ResultSet resultSet = null;
 
         try {
-            statement = connection.createStatement();
+            statement = connection.prepareStatement(sql);
             resultSet = statement.executeQuery(sql);
 
             while (resultSet.next()){
@@ -162,11 +159,11 @@ public class DatabaseQueryService {
         String sql = getSqlFromFile(SQL_PRINT_PROJECT_PRICES);
 
         Connection connection = Database.getInstance().getConnection();
-        Statement statement = null;
+        PreparedStatement statement = null;
         ResultSet resultSet = null;
 
         try {
-            statement = connection.createStatement();
+            statement = connection.prepareStatement(sql);
             resultSet = statement.executeQuery(sql);
 
             while (resultSet.next()){
