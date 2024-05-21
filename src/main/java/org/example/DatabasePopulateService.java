@@ -3,6 +3,7 @@ package org.example;
 import java.io.FileReader;
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -21,10 +22,10 @@ public class DatabasePopulateService {
     }
 
     private static void populateDb(Connection connection, String sql) {
-        Statement statement;
+        PreparedStatement statement;
         try{
-            statement = connection.createStatement();
-            statement.executeUpdate(sql);
+            statement = connection.prepareStatement(sql);
+            statement.executeUpdate();
             statement.close();
         } catch (SQLException e){
             e.printStackTrace();

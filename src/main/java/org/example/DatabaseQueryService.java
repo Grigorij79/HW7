@@ -26,7 +26,7 @@ public class DatabaseQueryService {
 
         try {
             statement = connection.prepareStatement(sql);
-            resultSet = statement.executeQuery(sql);
+            resultSet = statement.executeQuery();
 
             while (resultSet.next()){
                 MaxProjectCountClient client = new MaxProjectCountClient();
@@ -78,7 +78,7 @@ public class DatabaseQueryService {
 
         try {
             statement = connection.prepareStatement(sql);
-            resultSet = statement.executeQuery(sql);
+            resultSet = statement.executeQuery();
 
             while (resultSet.next()){
                 LongestProject project = new LongestProject();
@@ -107,7 +107,7 @@ public class DatabaseQueryService {
 
         try {
             statement = connection.prepareStatement(sql);
-            resultSet = statement.executeQuery(sql);
+            resultSet = statement.executeQuery();
 
             while (resultSet.next()){
                 MaxSalaryWorker worker = new MaxSalaryWorker();
@@ -135,7 +135,7 @@ public class DatabaseQueryService {
 
         try {
             statement = connection.prepareStatement(sql);
-            resultSet = statement.executeQuery(sql);
+            resultSet = statement.executeQuery();
 
             while (resultSet.next()){
                 YoungestEldestWorker worker = new YoungestEldestWorker();
@@ -164,7 +164,7 @@ public class DatabaseQueryService {
 
         try {
             statement = connection.prepareStatement(sql);
-            resultSet = statement.executeQuery(sql);
+            resultSet = statement.executeQuery();
 
             while (resultSet.next()){
                 PrintProjectPrices project = new PrintProjectPrices();
